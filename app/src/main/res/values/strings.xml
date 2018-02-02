@@ -6,4 +6,8 @@
     <string name="register">register</string>
     <string name="remember_me">remember me</string>
     <string name="login">Login</string>
+    <string name="login_invalid_username">Klaidingai įvestas prisijungimo vardas</string>
+    <string name="login_invalid_password">Klaidingai įvestas slaptažodis</string>
+    <string name="login_empty_username">Neįvestas prisijungimo vardas</string>
+    <string name="login_empty_password">Neįvestas prisijungimo vardas</string>
 </resources>

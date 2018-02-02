@@ -25,7 +25,7 @@ public class User{
         this.email = email;
     }
 
-    //skirtas loginui
+    //konstruktorius skirtas loginui
     public User(Context context){
         this.sharedPreferences=context.getSharedPreferences(User.PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
     }
@@ -39,16 +39,16 @@ public class User{
         return this.sharedPreferences.getString(PASSWORD_KEY,"");
     }
 
-    public boolean getRememberMeForLogin() {
+    public boolean isRememberedForLogin() {
         return this.sharedPreferences.getBoolean(REMEMBER_ME_KEY, false);
     }
 
     public void setUsernameForLogin(String username) {
-      this.sharedPreferences.edit().putString(USERNAME_KEY,username).commit();
+      this.sharedPreferences.edit().putString(USERNAME_KEY,username).apply();
     }
 
     public void setPasswordForLogin(String password) {
-       this.sharedPreferences.edit().putString(PASSWORD_KEY,password).commit();
+       this.sharedPreferences.edit().putString(PASSWORD_KEY,password).apply();
     }
 
     public void setRememberMeKeyForLogin(boolean rememberMe){

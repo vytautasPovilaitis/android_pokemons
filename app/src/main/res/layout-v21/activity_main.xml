@@ -17,13 +17,12 @@
         android:layout_marginTop="29dp"
         android:text="User registration system"
         android:textColor="@color/white"
-        android:textSize="20dp"/>
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:contentDescription="@string/LoginImage"
@@ -33,13 +32,13 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/textView"
         android:layout_marginTop="146dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
+        android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
 
@@ -47,20 +46,19 @@
         android:id="@+id/password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/username"
         android:layout_alignStart="@+id/username"
         android:layout_below="@+id/username"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:inputType="textPassword"
         android:hint="@string/string_password"
-        android:textColorHint="@color/white"/>
+        android:inputType="textPassword"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password"
         android:layout_below="@+id/password"
         android:layout_marginTop="17dp"
@@ -74,9 +72,8 @@
         android:layout_alignBaseline="@+id/login_button"
         android:layout_alignBottom="@+id/login_button"
         android:layout_alignEnd="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:text="@string/register"
         android:background="@color/green"
+        android:text="@string/register"
 
         />
 
@@ -85,11 +82,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/register_button"
-        android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password"
-        android:text="@string/remember_me"
-        android:textColor="@color/white"
         android:buttonTint="@color/white"
-        />
+        android:text="@string/remember_me"
+        android:textColor="@color/white" />
 
 </RelativeLayout>
