@@ -6,8 +6,10 @@
     <string name="register">register</string>
     <string name="remember_me">remember me</string>
     <string name="login">Login</string>
-    <string name="login_invalid_username">Klaidingai įvestas prisijungimo vardas</string>
-    <string name="login_invalid_password">Klaidingai įvestas slaptažodis</string>
-    <string name="login_empty_username">Neįvestas prisijungimo vardas</string>
-    <string name="login_empty_password">Neįvestas prisijungimo vardas</string>
+    <string name="login_invalid_username">Incorect username</string>
+    <string name="login_invalid_password">Incorect password</string>
+    <string name="login_empty_username">Username field is empty</string>
+    <string name="login_empty_password">Password field is empty</string>
+    <string name="new_user_registration">New user registration</string>
+    <string name="main_activity_title">User registration system</string>
 </resources>

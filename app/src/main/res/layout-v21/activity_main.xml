@@ -7,17 +7,16 @@
     android:background="@color/lightBlue"
     tools:context="com.example.vytautas.myapplication.MainActivity">
 
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/user_registration_system"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="29dp"
-        android:text="User registration system"
+        android:text="@string/main_activity_title"
         android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textSize="20sp"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -32,13 +31,12 @@
         android:id="@+id/username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView"
-        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/user_registration_system"
+        android:layout_below="@+id/user_registration_system"
         android:layout_marginTop="146dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
-        android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
 
@@ -50,10 +48,9 @@
         android:layout_below="@+id/username"
         android:layout_marginTop="20dp"
         android:ems="10"
-        android:hint="@string/string_password"
         android:inputType="textPassword"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:hint="@string/string_password"
+        android:textColorHint="@color/white"/>
 
     <Button
         android:id="@+id/login_button"
@@ -72,8 +69,8 @@
         android:layout_alignBaseline="@+id/login_button"
         android:layout_alignBottom="@+id/login_button"
         android:layout_alignEnd="@+id/password"
-        android:background="@color/green"
         android:text="@string/register"
+        android:background="@color/green"
 
         />
 
@@ -83,8 +80,9 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/register_button"
         android:layout_alignStart="@+id/password"
-        android:buttonTint="@color/white"
         android:text="@string/remember_me"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:buttonTint="@color/white"
+        />
 
 </RelativeLayout>

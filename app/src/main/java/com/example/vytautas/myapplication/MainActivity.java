@@ -14,8 +14,10 @@ public class MainActivity extends AppCompatActivity {
     EditText etUsername;
     EditText etPassword;
     Button loginButton;
+    Button registerButton;
     CheckBox loginRememberMe;
     User userLogin;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +28,13 @@ public class MainActivity extends AppCompatActivity {
         etPassword = (EditText) findViewById(R.id.password);
         loginButton = (Button) findViewById(R.id.login_button);
         loginRememberMe = (CheckBox) findViewById(R.id.login_remember_me);
+        registerButton = (Button) findViewById(R.id.register_button);
 
         etUsername.setError(null);
         etPassword.setError(null);
         initBtnLogin();
         initCheckBox();
+        initBtnRegister();
     }
 
     public void initBtnLogin() {
@@ -59,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                     etPassword.setError(getResources().getString(R.string.login_invalid_password));
                 }
                 if (!cancel) {
-                    Toast.makeText(MainActivity.this, "Prisijungimo vardas: " + etUsername.getText().toString() + "\n" +
-                            "Slaptažodis: " + etPassword.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Username: " + etUsername.getText().toString() + "\n" +
+                            "Password: " + etPassword.getText().toString(), Toast.LENGTH_SHORT).show();
                     userLogin.setUsernameForLogin(etUsername.getText().toString());
                     userLogin.setPasswordForLogin(etPassword.getText().toString());
                     if (loginRememberMe.isChecked()) {
@@ -84,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
             etUsername.setText("", TextView.BufferType.EDITABLE);
             etPassword.setText("", TextView.BufferType.EDITABLE);
         }
+    }
+
+    public void initBtnRegister(){
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent goToRegisterActivity = new Intent(MainActivity.this, RegisterActivity.class);
+                startActivity(goToRegisterActivity);
+            }
+        });
     }
 }
 
