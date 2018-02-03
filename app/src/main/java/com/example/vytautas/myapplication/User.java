@@ -31,28 +31,29 @@ public class User {
     }
 
     //Skirti loginui (MainActivity)
-    public String getUsernameForLogin() {
-        return this.sharedPreferences.getString(USERNAME_KEY, "");
-    }
-
-    public String getPasswordForLogin() {
-        return this.sharedPreferences.getString(PASSWORD_KEY, "");
-    }
-
-    public boolean isRememberedForLogin() {
-        return this.sharedPreferences.getBoolean(REMEMBER_ME_KEY, false);
-    }
 
     public void setUsernameForLogin(String username) {
         this.sharedPreferences.edit().putString(USERNAME_KEY, username).apply();
+    }
+
+    public String getUsernameForLogin() {
+        return this.sharedPreferences.getString(USERNAME_KEY, "");
     }
 
     public void setPasswordForLogin(String password) {
         this.sharedPreferences.edit().putString(PASSWORD_KEY, password).apply();
     }
 
+    public String getPasswordForLogin() {
+        return this.sharedPreferences.getString(PASSWORD_KEY, "");
+    }
+
     public void setRememberMeKeyForLogin(boolean rememberMe) {
-        this.sharedPreferences.edit().putBoolean(REMEMBER_ME_KEY, rememberMe);
+        this.sharedPreferences.edit().putBoolean(REMEMBER_ME_KEY, rememberMe).apply();
+    }
+
+    public boolean isRememberedForLogin() {
+        return this.sharedPreferences.getBoolean(REMEMBER_ME_KEY, false);
     }
 
     //skirti registracijai (RegisterActivity)
