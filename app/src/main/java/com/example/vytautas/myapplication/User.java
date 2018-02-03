@@ -7,14 +7,14 @@ import android.content.SharedPreferences;
  * Created by Vytautas on 31/01/2018.
  */
 
-public class User{
+public class User {
     private String username;
     private String password;
     private String email;
     private static final String PREFERENCES_FILE_NAME = "com.example.vytautas.myapplication";
-    private static final String USERNAME_KEY="username";
+    private static final String USERNAME_KEY = "username";
     private static final String PASSWORD_KEY = "password";
-    private static final String REMEMBER_ME_KEY="rememberMe";
+    private static final String REMEMBER_ME_KEY = "rememberMe";
 
     private SharedPreferences sharedPreferences;
 
@@ -26,17 +26,17 @@ public class User{
     }
 
     //konstruktorius skirtas loginui
-    public User(Context context){
-        this.sharedPreferences=context.getSharedPreferences(User.PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
+    public User(Context context) {
+        this.sharedPreferences = context.getSharedPreferences(User.PREFERENCES_FILE_NAME, Context.MODE_PRIVATE);
     }
 
     //Skirti loginui (MainActivity)
     public String getUsernameForLogin() {
-        return this.sharedPreferences.getString(USERNAME_KEY,"");
+        return this.sharedPreferences.getString(USERNAME_KEY, "");
     }
 
     public String getPasswordForLogin() {
-        return this.sharedPreferences.getString(PASSWORD_KEY,"");
+        return this.sharedPreferences.getString(PASSWORD_KEY, "");
     }
 
     public boolean isRememberedForLogin() {
@@ -44,15 +44,15 @@ public class User{
     }
 
     public void setUsernameForLogin(String username) {
-      this.sharedPreferences.edit().putString(USERNAME_KEY,username).apply();
+        this.sharedPreferences.edit().putString(USERNAME_KEY, username).apply();
     }
 
     public void setPasswordForLogin(String password) {
-       this.sharedPreferences.edit().putString(PASSWORD_KEY,password).apply();
+        this.sharedPreferences.edit().putString(PASSWORD_KEY, password).apply();
     }
 
-    public void setRememberMeKeyForLogin(boolean rememberMe){
-       this.sharedPreferences.edit().putBoolean(REMEMBER_ME_KEY,rememberMe);
+    public void setRememberMeKeyForLogin(boolean rememberMe) {
+        this.sharedPreferences.edit().putBoolean(REMEMBER_ME_KEY, rememberMe);
     }
 
     //skirti registracijai (RegisterActivity)

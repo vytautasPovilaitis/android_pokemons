@@ -12,4 +12,22 @@
     <string name="login_empty_password">Password field is empty</string>
     <string name="new_user_registration">New user registration</string>
     <string name="main_activity_title">User registration system</string>
+    <string name="registration_te_username">Username:</string>
+    <string name="register_tw_password1">Password:</string>
+    <string name="register_tw_password2">Confirm password:</string>
+    <string name="register_tw_email">Email:</string>
+    <string name="login_tw_password">Password:</string>
+    <string name="login_tw_username">Username:</string>
+    <string name="register_bt_register">Register</string>
+    <string name="back_to_login">Back to login</string>
+    <string name="description">Back to login</string>
+    <string name="register_empty_password">Password field is empty</string>
+    <string name="register_empty_email">Email field is empty</string>
+    <string name="register_empty_username">Username field is empty</string>
+    <string name="register_invalid_username">Username is invalid</string>
+    <string name="register_invalid_password">Password is invalid</string>
+    <string name="register_invalid_email">Invalid email</string>
+
+
+    description
 </resources>

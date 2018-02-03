@@ -13,28 +13,30 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText etUsername;
     EditText etPassword;
-    Button loginButton;
-    Button registerButton;
-    CheckBox loginRememberMe;
-    User userLogin;
 
+    Button loginButton;
+    User userLogin;
+    CheckBox loginRememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         userLogin = new User(MainActivity.this);
+        //iš MainActivity
         etUsername = (EditText) findViewById(R.id.username);
         etPassword = (EditText) findViewById(R.id.password);
         loginButton = (Button) findViewById(R.id.login_button);
         loginRememberMe = (CheckBox) findViewById(R.id.login_remember_me);
-        registerButton = (Button) findViewById(R.id.register_button);
+        //iš registerActivity
 
         etUsername.setError(null);
         etPassword.setError(null);
-        initBtnLogin();
-        initCheckBox();
-        initBtnRegister();
+
+        initBtnLogin();//login
+        initRememberMeCheckBox();//logine rememberMe
+        initBtnRegister();//Logine register
+
     }
 
     public void initBtnLogin() {
@@ -42,27 +44,19 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-                boolean cancel = false;
-                String sUsername = etUsername.getText().toString();
-                String sPassword = etPassword.getText().toString();
-                if (sUsername.isEmpty()) {
-                    cancel = true;
+                if (etUsername.getText().toString().isEmpty()) {
                     etUsername.requestFocus();
-                    etUsername.setError(getResources().getString(R.string.login_empty_username));
-                } else if (sPassword.isEmpty()) {
-                    cancel = true;
+                    etUsername.setError(getResources().getString(R.string.register_empty_username));
+                } else if (etPassword.getText().toString().isEmpty()) {
                     etPassword.requestFocus();
                     etPassword.setError(getResources().getString(R.string.login_empty_password));
                 } else if (!Validation.isValidCredentials(etUsername.getText().toString())) {
-                    cancel = true;
                     etUsername.requestFocus();
                     etUsername.setError(getResources().getString(R.string.login_invalid_username));
                 } else if (!Validation.isValidCredentials(etPassword.getText().toString())) {
-                    cancel = true;
                     etPassword.requestFocus();
                     etPassword.setError(getResources().getString(R.string.login_invalid_password));
-                }
-                if (!cancel) {
+                } else {
                     Toast.makeText(MainActivity.this, "Username: " + etUsername.getText().toString() + "\n" +
                             "Password: " + etPassword.getText().toString(), Toast.LENGTH_SHORT).show();
                     userLogin.setUsernameForLogin(etUsername.getText().toString());
@@ -79,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void initCheckBox() {
+    public void initRememberMeCheckBox() {
         loginRememberMe.setChecked(userLogin.isRememberedForLogin());
         if (userLogin.isRememberedForLogin()) {
             etUsername.setText(userLogin.getUsernameForLogin(), TextView.BufferType.EDITABLE);
@@ -90,7 +84,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void initBtnRegister(){
+    public void initBtnRegister() {
+        Button registerButton = (Button) findViewById(R.id.register_button);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -99,5 +94,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
 
