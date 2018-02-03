@@ -41,12 +41,13 @@ public class User {
     }
 
     public void setPasswordForLogin(String password) {
-        this.sharedPreferences.edit().putString(PASSWORD_KEY, password).apply();
+        this.sharedPreferences.edit().putString(PASSWORD_KEY, password).commit();
     }
 
     public String getPasswordForLogin() {
         return this.sharedPreferences.getString(PASSWORD_KEY, "");
     }
+
 
     public void setRememberMeKeyForLogin(boolean rememberMe) {
         this.sharedPreferences.edit().putBoolean(REMEMBER_ME_KEY, rememberMe).apply();

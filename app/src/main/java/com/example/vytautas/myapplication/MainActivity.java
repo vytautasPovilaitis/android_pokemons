@@ -15,14 +15,14 @@ public class MainActivity extends AppCompatActivity {
     EditText etPassword;
 
     Button loginButton;
-    User userLogin;
+    User user;
     CheckBox loginRememberMe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        userLogin = new User(MainActivity.this);
+        user = new User(MainActivity.this);
         //iš MainActivity
         etUsername = (EditText) findViewById(R.id.username);
         etPassword = (EditText) findViewById(R.id.password);
@@ -59,12 +59,13 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Username: " + etUsername.getText().toString() + "\n" +
                             "Password: " + etPassword.getText().toString(), Toast.LENGTH_SHORT).show();
-                    userLogin.setUsernameForLogin(etUsername.getText().toString());
-                    userLogin.setPasswordForLogin(etPassword.getText().toString());
+                    user.setUsernameForLogin(etUsername.getText().toString());
+                    user.setPasswordForLogin(etPassword.getText().toString());
+
                     if (loginRememberMe.isChecked()) {
-                        userLogin.setRememberMeKeyForLogin(true);
+                        user.setRememberMeKeyForLogin(true);
                     } else {
-                        userLogin.setRememberMeKeyForLogin(false);
+                        user.setRememberMeKeyForLogin(false);
                     }
                     Intent goToRegisterActivity = new Intent(MainActivity.this, RegisterActivity.class);
                     startActivity(goToRegisterActivity);
@@ -74,14 +75,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initRememberMeCheckBox() {
-        loginRememberMe.setChecked(userLogin.isRememberedForLogin());
-        if (userLogin.isRememberedForLogin()) {
-            etUsername.setText(userLogin.getUsernameForLogin(), TextView.BufferType.EDITABLE);
-            etUsername.setText(userLogin.getPasswordForLogin(), TextView.BufferType.EDITABLE);
+        loginRememberMe.setChecked(user.isRememberedForLogin());
+        if (user.isRememberedForLogin()) {
+            etUsername.setText(user.getUsernameForLogin(), TextView.BufferType.EDITABLE);
+            etUsername.setText(user.getPasswordForLogin(), TextView.BufferType.EDITABLE);
         } else {
             etUsername.setText("", TextView.BufferType.EDITABLE);
             etPassword.setText("", TextView.BufferType.EDITABLE);
         }
+
     }
 
     public void initBtnRegister() {
