@@ -41,7 +41,7 @@ public class User {
     }
 
     public void setPasswordForLogin(String password) {
-        this.sharedPreferences.edit().putString(PASSWORD_KEY, password).commit();
+        this.sharedPreferences.edit().putString(PASSWORD_KEY, password).apply();
     }
 
     public String getPasswordForLogin() {
