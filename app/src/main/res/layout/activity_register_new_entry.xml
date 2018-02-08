@@ -12,54 +12,55 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tw_id"
+            android:id="@+id/register_new_activity_tw_owner"
+            style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="204dp"
-            android:text="@string/pokemon_id"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/et_id"
-            app:layout_constraintTop_toTopOf="@+id/et_id" />
+            android:layout_height="17dp"
+            android:layout_marginEnd="212dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/pokemon_owner"
+            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_id"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tw_name"
+            android:id="@+id/register_new_activity_tw_name"
+            style="@style/registerNewEntryTextView"
             android:layout_width="43dp"
             android:layout_height="17dp"
-            android:layout_marginEnd="172dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginEnd="212dp"
+            android:layout_marginTop="32dp"
             android:text="@string/pokemon_name"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/et_name"
-            app:layout_constraintTop_toBottomOf="@+id/tw_id" />
+            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_name"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_tw_owner" />
 
 
         <TextView
-            android:id="@+id/tw_weigth"
+            android:id="@+id/register_new_activity_tw_weigth"
+            style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="172dp"
-            android:layout_marginTop="92dp"
+            android:layout_marginEnd="208dp"
+            android:layout_marginTop="88dp"
             android:text="@string/pokemon_weigth"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/et_weigth"
-            app:layout_constraintTop_toBottomOf="@+id/tw_id" />
+            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_weigth"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_tw_owner" />
 
         <TextView
-            android:id="@+id/tw_heigth"
+            android:id="@+id/register_new_activity_tw_heigth"
+            style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="174dp"
-            android:layout_marginTop="148dp"
+            android:layout_marginEnd="208dp"
+            android:layout_marginTop="144dp"
             android:text="@string/pokemon_heigth"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="@+id/et_heigth"
-            app:layout_constraintTop_toBottomOf="@+id/tw_id" />
+            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_heigth"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_tw_owner" />
 
         <EditText
-            android:id="@+id/et_id"
-            android:layout_width="220dp"
+            android:id="@+id/register_new_activity_et_id"
+            android:layout_width="260dp"
             android:layout_height="56dp"
-            android:layout_marginEnd="84dp"
+            android:layout_marginEnd="60dp"
             android:layout_marginTop="64dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -68,60 +69,61 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_name"
-            android:layout_width="220dp"
+            android:id="@+id/register_new_activity_et_name"
+            android:layout_width="260dp"
             android:layout_height="56dp"
-            android:layout_marginEnd="84dp"
+            android:layout_marginEnd="60dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_id" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_id" />
 
         <EditText
-            android:id="@+id/et_weigth"
-            android:layout_width="220dp"
+            android:id="@+id/register_new_activity_et_weigth"
+            android:layout_width="260dp"
             android:layout_height="56dp"
-            android:layout_marginEnd="84dp"
+            android:layout_marginEnd="60dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_name" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_name" />
 
         <EditText
-            android:id="@+id/et_heigth"
-            android:layout_width="220dp"
+            android:id="@+id/register_new_activity_et_heigth"
+            android:layout_width="260dp"
             android:layout_height="56dp"
-            android:layout_marginEnd="84dp"
+            android:layout_marginEnd="60dp"
             android:ems="10"
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_weigth" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_weigth" />
 
         <TextView
-            android:id="@+id/tw_power"
+            android:id="@+id/register_new_activity_tw_power"
+            style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="208dp"
+            android:layout_marginEnd="216dp"
+            android:layout_marginTop="8dp"
             android:text="@string/combat_power"
-            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/et_heigth" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_heigth" />
 
         <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="wrap_content"
+            android:id="@+id/register_new_activity_radioGroup"
+            android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="80dp"
-            android:layout_marginTop="308dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="316dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
-                android:id="@+id/radioButton4"
+                android:id="@+id/register_new_activity_radioBt_weak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -133,7 +135,7 @@
                 tools:layout_editor_absoluteY="276dp" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/register_new_activity_radioBt_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -146,7 +148,7 @@
                 tools:layout_editor_absoluteY="292dp" />
 
             <RadioButton
-                android:id="@+id/radioButton3"
+                android:id="@+id/register_new_activity_radioBt_strong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -160,71 +162,68 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/tw_abilities"
+            android:id="@+id/register_new_activity_tw_abilities"
+            style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pokemon_abilities"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/tw_power"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintStart_toStartOf="@+id/register_new_activity_tw_power"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_radioGroup" />
 
         <CheckBox
-            android:id="@+id/cb_cb_vegan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/register_new_activity_cb_vegan"
+            android:layout_width="82dp"
+            android:layout_height="32dp"
             android:layout_marginTop="16dp"
             android:buttonTint="@color/white"
             android:text="@string/pokemon_vegan"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toStartOf="@+id/cb_twoHeads"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/register_new_activity_cb_twoHeads"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_radioGroup" />
 
         <CheckBox
-            android:id="@+id/cb_twoHeads"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/register_new_activity_cb_twoHeads"
+            android:layout_width="96dp"
+            android:layout_height="32dp"
             android:layout_marginEnd="144dp"
             android:layout_marginTop="16dp"
             android:buttonTint="@color/white"
             android:text="@string/pokemon_twoHeads"
             android:textColor="@color/white"
-            android:textSize="12sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_radioGroup" />
 
         <CheckBox
-            android:id="@+id/register_new_activity_cb_useless"
-            android:layout_width="76dp"
+            android:id="@+id/register_new_activity_cb_notFat"
+            android:layout_width="85dp"
             android:layout_height="32dp"
             android:buttonTint="@color/white"
-            android:text="@string/pokemon_useless"
+            android:text="@string/pokemon_not_fat"
             android:textColor="@color/white"
-            android:textSize="12sp"
-            app:layout_constraintStart_toEndOf="@+id/cb_twoHeads"
-            app:layout_constraintTop_toTopOf="@+id/cb_twoHeads" />
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/register_new_activity_cb_twoHeads"
+            app:layout_constraintTop_toTopOf="@+id/register_new_activity_cb_twoHeads" />
 
         <Spinner
             android:id="@+id/registerNewAcivity_type_spinner"
-            android:layout_width="214dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="88dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12"
+            android:layout_width="262dp"
+            android:layout_height="37dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="4dp"
 
-            />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
         <TextView
             android:id="@+id/textView12"
+            style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pokemon_type"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="@+id/tw_abilities"
-            app:layout_constraintTop_toBottomOf="@+id/cb_cb_vegan" />
-
+            app:layout_constraintStart_toStartOf="@+id/register_new_activity_tw_abilities"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_cb_vegan" />
 
     </android.support.constraint.ConstraintLayout>
-
-
 </ScrollView>

@@ -12,7 +12,7 @@
     <string name="login_empty_password">Password field is empty</string>
     <string name="new_user_registration">New user registration</string>
     <string name="main_activity_title">User registration system</string>
-    <string name="registration_te_username">Username:</string>
+    <string name="register_et_username">Username:</string>
     <string name="register_tw_password1">Password:</string>
     <string name="register_tw_password2">Confirm password:</string>
     <string name="register_tw_email">Email:</string>
@@ -30,7 +30,7 @@
     <string name="pokemon_weigth">Weigth</string>
     <string name="pokemon_heigth">Heigth</string>
     <string name="pokemon_name">Name</string>
-    <string name="pokemon_id">Id</string>
+    <string name="pokemon_owner">Owner</string>
     <string name="register_label"> Register new user</string>
     <string name="login_label">Login</string>
     <string name="registerNewEntry_label">Add new pokemon</string>
@@ -39,10 +39,14 @@
     <string name="pokemon_power_strong">Strong</string>
     <string name="combat_power">Combat Power</string>
     <string name="pokemon_abilities">Abilities</string>
-    <string name="pokemon_useless">Useless</string>
+    <string name="pokemon_not_fat">Not fat</string>
     <string name="pokemon_twoHeads">Two heads</string>
     <string name="pokemon_vegan">Vegan</string>
     <string name="pokemon_type">Pokemon type</string>
+    <string name="choose_your_pokemon_type">Choose your pokemon type</string>
+    <string name="register_tw_username">Username</string>
+    <string name="register_tw_title">Register new user</string>
+    <string name="register_bt_backToLogin">Back to login</string>
 
 
     description

@@ -1,7 +1,7 @@
 package com.example.vytautas.myapplication;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -20,10 +20,11 @@ public class RegisterNewEntry extends AppCompatActivity {
         Spinner registerNewActivitySpinner = (Spinner) findViewById(R.id.registerNewAcivity_type_spinner);
         String[] arraySpinner = new String[]{
                 "Fire", "Water", "Earth", "Metal", "Electric"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, arraySpinner);
-        adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(RegisterNewEntry.this, R.layout.register_new_entry_spinner_layout,
+                arraySpinner);
+        registerNewActivitySpinner.setPrompt("Select your pokemon type");
         registerNewActivitySpinner.setAdapter(adapter);
+
     }
 }
 
