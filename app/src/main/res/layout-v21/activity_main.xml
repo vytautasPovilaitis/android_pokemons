@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBlue"
+    android:background="@drawable/background"
     tools:context="com.example.vytautas.myapplication.MainActivity">
 
     <TextView
-        android:id="@+id/user_registration_system"
+        android:id="@+id/login_user_registration_system"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -18,7 +18,7 @@
         android:textSize="20sp" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/login_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -27,72 +27,75 @@
         android:src="@drawable/login_image" />
 
     <EditText
-        android:id="@+id/username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/user_registration_system"
+        android:id="@+id/login_et_username"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/login_user_registration_system"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="146dp"
+        android:layout_marginTop="185dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="22sp" />
 
     <EditText
-        android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/username"
-        android:layout_below="@+id/username"
-        android:layout_marginTop="20dp"
+        android:id="@+id/login_et_password"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_alignStart="@+id/login_et_username"
+        android:layout_below="@+id/login_et_username"
+        android:layout_marginTop="22dp"
         android:ems="10"
         android:inputType="textPassword"
+        android:textSize="22sp"
         android:textColor="@color/white" />
 
     <Button
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/login_bt_login"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/password"
-        android:layout_below="@+id/password"
-        android:layout_marginTop="17dp"
+        android:layout_alignStart="@+id/login_cb_remember_me"
+        android:layout_below="@+id/login_cb_remember_me"
         android:background="@color/orange"
         android:text="@string/login" />
 
     <Button
-        android:id="@+id/register_button"
-        android:layout_width="wrap_content"
+        android:id="@+id/login_bt_register"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/login_button"
-        android:layout_alignBottom="@+id/login_button"
-        android:layout_alignEnd="@+id/password"
+        android:layout_alignBaseline="@+id/login_bt_login"
+        android:layout_alignBottom="@+id/login_bt_login"
+        android:layout_alignEnd="@+id/login_et_password"
         android:background="@color/green"
         android:text="@string/register" />
 
     <CheckBox
-        android:id="@+id/login_remember_me"
+        android:id="@+id/login_cb_remember_me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/register_button"
-        android:layout_alignStart="@+id/password"
+        android:layout_alignStart="@+id/login_et_password"
+        android:layout_below="@+id/login_et_password"
         android:buttonTint="@color/white"
         android:text="@string/remember_me"
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/login_tw_username"
+        android:id="@+id/register_tw_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/username"
-        android:layout_alignTop="@+id/username"
+        android:layout_alignBottom="@+id/login_et_username"
+        android:layout_alignStart="@+id/login_et_username"
+        android:layout_marginBottom="42dp"
         android:text="@string/login_tw_username"
         android:textColor="@color/white" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/login_tw_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/password"
-        android:layout_alignTop="@+id/password"
+        android:layout_alignStart="@+id/login_et_password"
+        android:layout_below="@+id/login_et_username"
+        android:layout_marginTop="11dp"
         android:text="@string/login_tw_password"
         android:textColor="@color/white" />
 

@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/lightBlue"
+    android:background="@drawable/background"
     tools:context="com.example.vytautas.myapplication.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/register_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/registration_image" />
 
     <TextView
-        android:id="@+id/registration"
+        android:id="@+id/register_tw_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -30,7 +30,7 @@
         android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/tw_username"
+        android:id="@+id/register_tw_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/register_et_username"
@@ -43,7 +43,7 @@
         android:id="@+id/register_et_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/registration"
+        android:layout_below="@+id/register_tw_title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         android:ems="10"
@@ -74,8 +74,8 @@
         android:id="@+id/register_tw_password1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tw_username"
-        android:layout_alignRight="@+id/tw_username"
+        android:layout_alignEnd="@+id/register_tw_username"
+        android:layout_alignRight="@+id/register_tw_username"
         android:layout_below="@+id/register_et_username"
         android:text="@string/register_tw_password1"
         android:textColor="@color/white" />
@@ -108,7 +108,7 @@
         android:layout_alignStart="@+id/register_tw_password1"
         android:layout_below="@+id/register_et_password2"
         android:text="@string/register_tw_email"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white" />
 
     <Button
         android:id="@+id/register_bt_register"

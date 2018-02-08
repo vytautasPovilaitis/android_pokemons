@@ -13,7 +13,6 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     EditText etUsername;
     EditText etPassword;
-
     Button loginButton;
     User user;
     CheckBox loginRememberMe;
@@ -22,21 +21,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         user = new User(MainActivity.this);
-        //iš MainActivity
-        etUsername = (EditText) findViewById(R.id.username);
-        etPassword = (EditText) findViewById(R.id.password);
-        loginButton = (Button) findViewById(R.id.login_button);
-        loginRememberMe = (CheckBox) findViewById(R.id.login_remember_me);
-        //iš registerActivity
+
+        etUsername = (EditText) findViewById(R.id.login_et_username);
+        etPassword = (EditText) findViewById(R.id.login_et_password);
+        loginButton = (Button) findViewById(R.id.login_bt_login);
+        loginRememberMe = (CheckBox) findViewById(R.id.login_cb_remember_me);
 
         etUsername.setError(null);
         etPassword.setError(null);
 
-        initBtnLogin();//login
-        initRememberMeCheckBox();//logine rememberMe
-        initBtnRegister();//Logine register
-
+        initBtnLogin();//login mygtukas
+        initRememberMeCheckBox();//logine rememberMe checkBox
+        initBtnRegister();//Logine register butonas
     }
 
     public void initBtnLogin() {
@@ -67,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         user.setRememberMeKeyForLogin(false);
                     }
-                    Intent goToRegisterActivity = new Intent(MainActivity.this, RegisterActivity.class);
+                    Intent goToRegisterActivity = new Intent(MainActivity.this, RegisterNewEntry.class);
                     startActivity(goToRegisterActivity);
                 }
             }
@@ -87,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void initBtnRegister() {
-        Button registerButton = (Button) findViewById(R.id.register_button);
+        Button registerButton = (Button) findViewById(R.id.login_bt_register);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

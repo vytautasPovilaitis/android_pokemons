@@ -13,7 +13,7 @@ public class User {
     private String email;
     private static final String PREFERENCES_FILE_NAME = "com.example.vytautas.myapplication";
     private static final String USERNAME_KEY = "username";
-    private static final String PASSWORD_KEY = "password";
+    private static final String PASSWORD_KEY = "login_et_password";
     private static final String REMEMBER_ME_KEY = "rememberMe";
 
     private SharedPreferences sharedPreferences;

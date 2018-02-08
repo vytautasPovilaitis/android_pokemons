@@ -27,6 +27,22 @@
     <string name="register_invalid_username">Username is invalid</string>
     <string name="register_invalid_password">Password is invalid</string>
     <string name="register_invalid_email">Invalid email</string>
+    <string name="pokemon_weigth">Weigth</string>
+    <string name="pokemon_heigth">Heigth</string>
+    <string name="pokemon_name">Name</string>
+    <string name="pokemon_id">Id</string>
+    <string name="register_label"> Register new user</string>
+    <string name="login_label">Login</string>
+    <string name="registerNewEntry_label">Add new pokemon</string>
+    <string name="pokemon_power_weak">Weak</string>
+    <string name="pokemon_power_medium">Medium</string>
+    <string name="pokemon_power_strong">Strong</string>
+    <string name="combat_power">Combat Power</string>
+    <string name="pokemon_abilities">Abilities</string>
+    <string name="pokemon_useless">Useless</string>
+    <string name="pokemon_twoHeads">Two heads</string>
+    <string name="pokemon_vegan">Vegan</string>
+    <string name="pokemon_type">Pokemon type</string>
 
 
     description
