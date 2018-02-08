@@ -8,9 +8,11 @@ import android.content.SharedPreferences;
  */
 
 public class User {
+    private int id;
     private String username;
     private String password;
     private String email;
+    private String userlevel;
     private static final String PREFERENCES_FILE_NAME = "com.example.vytautas.myapplication";
     private static final String USERNAME_KEY = "username";
     private static final String PASSWORD_KEY = "login_et_password";
@@ -18,11 +20,17 @@ public class User {
 
     private SharedPreferences sharedPreferences;
 
+    //konstruktorius skirtas SqlLite
+    public User() {
+
+    }
+
     //skirtas registracijai (RegisterActivity)
-    public User(String username, String password, String email) {
+    public User(String username, String password, String email, String userlevel) {
         this.username = username;
         this.password = password;
         this.email = email;
+        this.userlevel = userlevel;
     }
 
     //konstruktorius skirtas loginui
@@ -70,6 +78,14 @@ public class User {
         return email;
     }
 
+    public String getUserLevel() {
+        return userlevel;
+    }
+
+    public void setUserlevel(String userlevel) {
+        this.userlevel = userlevel;
+    }
+
     public void setUsernameForRegister(String username) {
         this.username = username;
     }
@@ -80,6 +96,25 @@ public class User {
 
     public void setEmailForRegister(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id + '\'' +
+                "userlevel='" + userlevel + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
 

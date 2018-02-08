@@ -17,7 +17,7 @@ public class RegisterNewEntry extends AppCompatActivity {
     }
 
     public void initRegisterNewActivitySpinner() {
-        Spinner registerNewActivitySpinner = (Spinner) findViewById(R.id.registerNewAcivity_type_spinner);
+        Spinner registerNewActivitySpinner = (Spinner) findViewById(R.id.register_new_entry_type_spinner);
         String[] arraySpinner = new String[]{
                 "Fire", "Water", "Earth", "Metal", "Electric"};
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(RegisterNewEntry.this, R.layout.register_new_entry_spinner_layout,

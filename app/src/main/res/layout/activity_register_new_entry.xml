@@ -12,52 +12,49 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/register_new_activity_tw_owner"
+            android:id="@+id/register_new_entry_tw_master"
             style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="17dp"
-            android:layout_marginEnd="212dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/pokemon_owner"
-            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_id"
+            android:layout_marginTop="64dp"
+            android:text="@string/pokemon_master"
+            app:layout_constraintStart_toStartOf="@+id/register_new_entry_tw_name"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/register_new_activity_tw_name"
+            android:id="@+id/register_new_entry_tw_name"
             style="@style/registerNewEntryTextView"
             android:layout_width="43dp"
             android:layout_height="17dp"
             android:layout_marginEnd="212dp"
             android:layout_marginTop="32dp"
             android:text="@string/pokemon_name"
-            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_name"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_tw_owner" />
+            app:layout_constraintEnd_toEndOf="@+id/register_new_entry_et_name"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_tw_master" />
 
 
         <TextView
-            android:id="@+id/register_new_activity_tw_weigth"
+            android:id="@+id/register_new_entry_tw_weigth"
             style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="208dp"
             android:layout_marginTop="88dp"
             android:text="@string/pokemon_weigth"
-            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_weigth"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_tw_owner" />
+            app:layout_constraintStart_toStartOf="@+id/register_new_entry_tw_name"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_tw_master" />
 
         <TextView
-            android:id="@+id/register_new_activity_tw_heigth"
+            android:id="@+id/register_new_entry_tw_heigth"
             style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="208dp"
-            android:layout_marginTop="144dp"
+            android:layout_marginTop="148dp"
             android:text="@string/pokemon_heigth"
-            app:layout_constraintEnd_toEndOf="@+id/register_new_activity_et_heigth"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_tw_owner" />
+            app:layout_constraintStart_toStartOf="@+id/register_new_entry_tw_weigth"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_tw_master" />
 
         <EditText
-            android:id="@+id/register_new_activity_et_id"
+            android:id="@+id/register_new_entry_et_id"
             android:layout_width="260dp"
             android:layout_height="56dp"
             android:layout_marginEnd="60dp"
@@ -69,7 +66,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/register_new_activity_et_name"
+            android:id="@+id/register_new_entry_et_name"
             android:layout_width="260dp"
             android:layout_height="56dp"
             android:layout_marginEnd="60dp"
@@ -77,10 +74,10 @@
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_id" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_id" />
 
         <EditText
-            android:id="@+id/register_new_activity_et_weigth"
+            android:id="@+id/register_new_entry_et_weigth"
             android:layout_width="260dp"
             android:layout_height="56dp"
             android:layout_marginEnd="60dp"
@@ -88,10 +85,10 @@
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_name" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_name" />
 
         <EditText
-            android:id="@+id/register_new_activity_et_heigth"
+            android:id="@+id/register_new_entry_et_heigth"
             android:layout_width="260dp"
             android:layout_height="56dp"
             android:layout_marginEnd="60dp"
@@ -99,10 +96,10 @@
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_weigth" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_weigth" />
 
         <TextView
-            android:id="@+id/register_new_activity_tw_power"
+            android:id="@+id/register_new_entry_tw_power"
             style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -110,10 +107,10 @@
             android:layout_marginTop="8dp"
             android:text="@string/combat_power"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_et_heigth" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_heigth" />
 
         <RadioGroup
-            android:id="@+id/register_new_activity_radioGroup"
+            android:id="@+id/register_new_entry_radioGroup"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="60dp"
@@ -123,7 +120,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <RadioButton
-                android:id="@+id/register_new_activity_radioBt_weak"
+                android:id="@+id/register_new_entry_radioBt_weak"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -135,7 +132,7 @@
                 tools:layout_editor_absoluteY="276dp" />
 
             <RadioButton
-                android:id="@+id/register_new_activity_radioBt_medium"
+                android:id="@+id/register_new_entry_radioBt_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -148,7 +145,7 @@
                 tools:layout_editor_absoluteY="292dp" />
 
             <RadioButton
-                android:id="@+id/register_new_activity_radioBt_strong"
+                android:id="@+id/register_new_entry_radioBt_strong"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -162,16 +159,16 @@
         </RadioGroup>
 
         <TextView
-            android:id="@+id/register_new_activity_tw_abilities"
+            android:id="@+id/register_new_entry_tw_abilities"
             style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pokemon_abilities"
-            app:layout_constraintStart_toStartOf="@+id/register_new_activity_tw_power"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_radioGroup" />
+            app:layout_constraintStart_toStartOf="@+id/register_new_entry_tw_power"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_radioGroup" />
 
         <CheckBox
-            android:id="@+id/register_new_activity_cb_vegan"
+            android:id="@+id/register_new_entry_cb_vegan"
             android:layout_width="82dp"
             android:layout_height="32dp"
             android:layout_marginTop="16dp"
@@ -179,12 +176,12 @@
             android:text="@string/pokemon_vegan"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/register_new_activity_cb_twoHeads"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_radioGroup" />
+            app:layout_constraintEnd_toStartOf="@+id/register_new_entry_cb_twoHeads"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_radioGroup" />
 
         <CheckBox
-            android:id="@+id/register_new_activity_cb_twoHeads"
-            android:layout_width="96dp"
+            android:id="@+id/register_new_entry_cb_twoHeads"
+            android:layout_width="95dp"
             android:layout_height="32dp"
             android:layout_marginEnd="144dp"
             android:layout_marginTop="16dp"
@@ -193,37 +190,61 @@
             android:textColor="@color/white"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_radioGroup" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_radioGroup" />
 
         <CheckBox
-            android:id="@+id/register_new_activity_cb_notFat"
-            android:layout_width="85dp"
+            android:id="@+id/register_new_entry_cb_notFat"
+            android:layout_width="84dp"
             android:layout_height="32dp"
             android:buttonTint="@color/white"
             android:text="@string/pokemon_not_fat"
             android:textColor="@color/white"
             android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/register_new_activity_cb_twoHeads"
-            app:layout_constraintTop_toTopOf="@+id/register_new_activity_cb_twoHeads" />
+            app:layout_constraintStart_toEndOf="@+id/register_new_entry_cb_twoHeads"
+            app:layout_constraintTop_toTopOf="@+id/register_new_entry_cb_twoHeads" />
 
         <Spinner
-            android:id="@+id/registerNewAcivity_type_spinner"
+            android:id="@+id/register_new_entry_type_spinner"
             android:layout_width="262dp"
             android:layout_height="37dp"
             android:layout_marginEnd="60dp"
             android:layout_marginTop="4dp"
 
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_pokemon_type" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/register_new_entry_pokemon_type"
             style="@style/registerNewEntryTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pokemon_type"
-            app:layout_constraintStart_toStartOf="@+id/register_new_activity_tw_abilities"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_activity_cb_vegan" />
+            app:layout_constraintStart_toStartOf="@+id/register_new_entry_tw_abilities"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_cb_vegan" />
+
+        <Button
+            android:id="@+id/register_new_entry_bt_add"
+            android:layout_width="89dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/register_new_entry_bt_add"
+            android:text="@string/register_new_entry_bt_add"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@+id/register_new_entry_type_spinner"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_type_spinner" />
+
+        <Button
+            android:id="@+id/register_new_entry_bt_back_to_login"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/register_new_entry_bt_add"
+            android:text="@string/back_to_login"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toEndOf="@+id/register_new_entry_bt_add"
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_type_spinner" />
 
     </android.support.constraint.ConstraintLayout>
 </ScrollView>

@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+                boolean cancel = false;
                 if (etUsername.getText().toString().isEmpty()) {
                     etUsername.requestFocus();
                     etUsername.setError(getResources().getString(R.string.register_empty_username));
@@ -55,11 +56,20 @@ public class MainActivity extends AppCompatActivity {
                     etPassword.requestFocus();
                     etPassword.setError(getResources().getString(R.string.login_invalid_password));
                 } else {
+                    DatabaseSQLite databaseSQLite = new DatabaseSQLite(getApplicationContext());
+                    if (databaseSQLite.isValidUser(etUsername.getText().toString(),
+                            etPassword.getText().toString())) { // rado vartotoją
+                    } else { // nerado vartotojo
+                        Toast.makeText(MainActivity.this, "No such user in database",
+                                Toast.LENGTH_SHORT).show();
+                        cancel = true;
+                    }
+                }
+                if (!cancel) {
                     Toast.makeText(MainActivity.this, "Username: " + etUsername.getText().toString() + "\n" +
                             "Password: " + etPassword.getText().toString(), Toast.LENGTH_SHORT).show();
                     user.setUsernameForLogin(etUsername.getText().toString());
                     user.setPasswordForLogin(etPassword.getText().toString());
-
                     if (loginRememberMe.isChecked()) {
                         user.setRememberMeKeyForLogin(true);
                     } else {
@@ -68,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                     Intent goToRegisterActivity = new Intent(MainActivity.this, RegisterNewEntry.class);
                     startActivity(goToRegisterActivity);
                 }
+
             }
         });
     }

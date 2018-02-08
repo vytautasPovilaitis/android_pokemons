@@ -20,7 +20,6 @@
     <string name="login_tw_username">Username:</string>
     <string name="register_bt_register">Register</string>
     <string name="back_to_login">Back to login</string>
-    <string name="description">Back to login</string>
     <string name="register_empty_password">Password field is empty</string>
     <string name="register_empty_email">Email field is empty</string>
     <string name="register_empty_username">Username field is empty</string>
@@ -30,7 +29,7 @@
     <string name="pokemon_weigth">Weigth</string>
     <string name="pokemon_heigth">Heigth</string>
     <string name="pokemon_name">Name</string>
-    <string name="pokemon_owner">Owner</string>
+    <string name="pokemon_master">Master</string>
     <string name="register_label"> Register new user</string>
     <string name="login_label">Login</string>
     <string name="registerNewEntry_label">Add new pokemon</string>
@@ -47,7 +46,7 @@
     <string name="register_tw_username">Username</string>
     <string name="register_tw_title">Register new user</string>
     <string name="register_bt_backToLogin">Back to login</string>
+    <string name="register_new_entry_bt_add">Add</string>
 
 
-    description
 </resources>

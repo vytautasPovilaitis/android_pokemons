@@ -24,7 +24,6 @@ public class RegisterActivity extends AppCompatActivity {
         etNewPassword2 = (EditText) findViewById(R.id.register_et_password2);
         etNewEmail = (EditText) findViewById(R.id.register_et_email);
 
-
         initBtRegisterNewUser();//register new user
         initBtRegisterBack();//back to login
     }
@@ -61,8 +60,12 @@ public class RegisterActivity extends AppCompatActivity {
                     etNewEmail.requestFocus();
                     etNewEmail.setError(getResources().getString(R.string.register_invalid_email));
                 } else {
-                    Toast.makeText(RegisterActivity.this, "New user registered successfully!\nUsername: " + etNewUsername.getText().toString() + "\n" +
-                            "Password: " + etNewPassword1.getText().toString() + "\nEmail: " + etNewEmail.getText(), Toast.LENGTH_SHORT).show();
+                    DatabaseSQLite databaseSQLite = new DatabaseSQLite(getApplicationContext());
+                    User user = new User(etNewUsername.getText().toString(),
+                            etNewPassword1.getText().toString(), etNewEmail.getText().toString(),"1");
+                    databaseSQLite.addUser(user);
+
+                    Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
                     Intent goToMainActivity = new Intent(RegisterActivity.this, MainActivity.class);
                     startActivity(goToMainActivity);
                 }
