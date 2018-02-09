@@ -66,8 +66,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 if (!cancel) {
-                    Toast.makeText(MainActivity.this, "Username: " + etUsername.getText().toString() + "\n" +
-                            "Password: " + etPassword.getText().toString(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Welcome back, " + etUsername.getText().toString(), Toast.LENGTH_SHORT).show();
                     user.setUsernameForLogin(etUsername.getText().toString());
                     user.setPasswordForLogin(etPassword.getText().toString());
                     if (loginRememberMe.isChecked()) {
