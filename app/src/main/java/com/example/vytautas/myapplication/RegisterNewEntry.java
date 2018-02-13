@@ -12,7 +12,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class RegisterNewEntry extends AppCompatActivity {
-    ArrayAdapter arrayAdapter;
     DatabaseSQLite databaseSQLite;
     Button btAddPokemon;
     EditText etPokemonName, etPokemonHeigth, etPokemonWeigth;
@@ -74,10 +73,21 @@ public class RegisterNewEntry extends AppCompatActivity {
                 if (cbAbilities3.isChecked()) {
                     str.append("not fat");
                 }
-                Pokemon pokemon = new Pokemon(etPokemonName.getText().toString(), etPokemonHeigth.getText().toString(), etPokemonWeigth.getText().toString(), cp, str.toString(), registerNewActivitySpinner.getSelectedItem().toString());
-                databaseSQLite.addPokemon(pokemon);
-                String message = databaseSQLite.getAllPokemons();
-                Toast.makeText(RegisterNewEntry.this, message, Toast.LENGTH_SHORT).show();
+                if ((!Validation.isValidDouble(etPokemonHeigth.getText().toString()))) {
+                    etPokemonHeigth.requestFocus();
+                    etPokemonHeigth.setError("Error");
+                } else if (!Validation.isValidDouble(etPokemonWeigth.getText().toString())) {
+                    etPokemonWeigth.requestFocus();
+                    etPokemonWeigth.setError("Error");
+                } else if (!Validation.isValidCredentials(etPokemonName.getText().toString())) {
+                    etPokemonName.requestFocus();
+                    etPokemonName.setError("Error");
+                } else {
+                    Pokemon pokemon = new Pokemon(etPokemonName.getText().toString(), etPokemonHeigth.getText().toString(), etPokemonWeigth.getText().toString(), cp, str.toString(), registerNewActivitySpinner.getSelectedItem().toString());
+                    databaseSQLite.addPokemon(pokemon);
+                    String message = databaseSQLite.getAllPokemons();
+                    Toast.makeText(RegisterNewEntry.this, message, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
