@@ -2,6 +2,8 @@ package com.example.vytautas.myapplication;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -24,6 +26,10 @@ public class RegisterNewEntry extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_new_entry);
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
 
         databaseSQLite = new DatabaseSQLite(getApplicationContext());
         btAddPokemon = (Button) findViewById(R.id.register_new_entry_bt_add);
