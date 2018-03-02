@@ -47,6 +47,8 @@
     <string name="register_tw_title">Register new user</string>
     <string name="register_bt_backToLogin">Back to login</string>
     <string name="register_new_entry_bt_add">Add</string>
+    <string name="new_entry_label">Įrašo kūrimas</string>
+    <string name="entry_update_label">Įrašo redagavimas</string>
 
 
 </resources>

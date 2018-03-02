@@ -18,6 +18,7 @@
         </activity>
         <activity android:name=".RegisterActivity" />
         <activity android:name=".RegisterNewEntry" />
+        <activity android:name=".SearchActivity" />
     </application>
 
 </manifest>

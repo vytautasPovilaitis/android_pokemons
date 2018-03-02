@@ -56,7 +56,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/register_new_entry_et_weigth"
+            android:id="@+id/register_new_entry_et_weight"
             android:layout_width="260dp"
             android:layout_height="56dp"
             android:layout_marginEnd="60dp"
@@ -67,7 +67,7 @@
             app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_name" />
 
         <EditText
-            android:id="@+id/register_new_entry_et_heigth"
+            android:id="@+id/register_new_entry_et_height"
             android:layout_width="260dp"
             android:layout_height="56dp"
             android:layout_marginEnd="60dp"
@@ -75,7 +75,7 @@
             android:inputType="textPersonName"
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_weigth" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_weight" />
 
         <TextView
             android:id="@+id/register_new_entry_tw_power"
@@ -85,7 +85,7 @@
             android:layout_marginEnd="212dp"
             android:text="@string/combat_power"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_heigth" />
+            app:layout_constraintTop_toBottomOf="@+id/register_new_entry_et_height" />
 
         <RadioGroup
             android:id="@+id/register_new_entry_radioGroup"
@@ -214,13 +214,13 @@
             app:layout_constraintTop_toBottomOf="@+id/register_new_entry_type_spinner" />
 
         <Button
-            android:id="@+id/register_new_entry_bt_back_to_login"
+            android:id="@+id/btnUpdate"
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="48dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/register_new_entry_bt_add"
-            android:text="@string/back_to_login"
+            android:text="Update"
             android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/register_new_entry_bt_add"
             app:layout_constraintTop_toBottomOf="@+id/register_new_entry_type_spinner" />

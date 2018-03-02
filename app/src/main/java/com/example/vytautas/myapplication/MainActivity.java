@@ -46,15 +46,19 @@ public class MainActivity extends AppCompatActivity {
                 if (etUsername.getText().toString().isEmpty()) {
                     etUsername.requestFocus();
                     etUsername.setError(getResources().getString(R.string.register_empty_username));
+                    cancel = true;
                 } else if (etPassword.getText().toString().isEmpty()) {
                     etPassword.requestFocus();
                     etPassword.setError(getResources().getString(R.string.login_empty_password));
+                    cancel = true;
                 } else if (!Validation.isValidCredentials(etUsername.getText().toString())) {
                     etUsername.requestFocus();
                     etUsername.setError(getResources().getString(R.string.login_invalid_username));
+                    cancel = true;
                 } else if (!Validation.isValidCredentials(etPassword.getText().toString())) {
                     etPassword.requestFocus();
                     etPassword.setError(getResources().getString(R.string.login_invalid_password));
+                    cancel = true;
                 } else {
                     DatabaseSQLite databaseSQLite = new DatabaseSQLite(getApplicationContext());
                     if (databaseSQLite.isValidUser(etUsername.getText().toString(),
@@ -64,19 +68,20 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.LENGTH_SHORT).show();
                         cancel = true;
                     }
-                }
-                if (!cancel) {
-                    Toast.makeText(MainActivity.this, "Welcome back, " + etUsername.getText().toString(), Toast.LENGTH_SHORT).show();
-                    user.setUsernameForLogin(etUsername.getText().toString());
-                    user.setPasswordForLogin(etPassword.getText().toString());
-                    if (loginRememberMe.isChecked()) {
-                        user.setRememberMeKeyForLogin(true);
-                    } else {
-                        user.setRememberMeKeyForLogin(false);
+                    if (!cancel) {
+                        Toast.makeText(MainActivity.this, "Welcome back, " + etUsername.getText().toString(), Toast.LENGTH_SHORT).show();
+                        user.setUsernameForLogin(etUsername.getText().toString());
+                        user.setPasswordForLogin(etPassword.getText().toString());
+                        if (loginRememberMe.isChecked()) {
+                            user.setRememberMeKeyForLogin(true);
+                        } else {
+                            user.setRememberMeKeyForLogin(false);
+                        }
+                        Intent goToRegisterActivity = new Intent(MainActivity.this, SearchActivity.class);
+                        startActivity(goToRegisterActivity);
                     }
-                    Intent goToRegisterActivity = new Intent(MainActivity.this, RegisterNewEntry.class);
-                    startActivity(goToRegisterActivity);
                 }
+
 
             }
         });

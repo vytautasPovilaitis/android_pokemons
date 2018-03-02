@@ -7,22 +7,24 @@ package com.example.vytautas.myapplication;
 public class Pokemon {
     private int id;
     private String name;
-    private String heigth;
-    private String weigth;
     private String cp;
     private String abilities;
     private String type;
+    private double heigth;
+    private double weight;
 
     public Pokemon() {
+
     }
 
-    public Pokemon(String name, String heigth, String weigth, String cp, String abilities, String type) {
+    public Pokemon(String name, String cp, String abilities, String type, double heigth, double weigth) {
         this.name = name;
         this.heigth = heigth;
-        this.weigth = weigth;
+        this.weight = weigth;
         this.cp = cp;
         this.abilities = abilities;
         this.abilities = abilities;
+        this.type = type;
     }
 
     public String getType() {
@@ -49,20 +51,20 @@ public class Pokemon {
         this.name = name;
     }
 
-    public String getHeigth() {
+    public double getHeight() {
         return heigth;
     }
 
-    public void setHeigth(String heigth) {
+    public void setHeight(double heigth) {
         this.heigth = heigth;
     }
 
-    public String getWeigth() {
-        return weigth;
+    public double getWeight() {
+        return weight;
     }
 
-    public void setWeigth(String weigth) {
-        this.weigth = weigth;
+    public void setWeight(double weigth) {
+        this.weight = weigth;
     }
 
     public String getCp() {
@@ -79,5 +81,18 @@ public class Pokemon {
 
     public void setAbilities(String abilities) {
         this.abilities = abilities;
+    }
+
+    @Override
+    public String toString() {
+        return "Pokemon{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cp='" + cp + '\'' +
+                ", abilities='" + abilities + '\'' +
+                ", type='" + type + '\'' +
+                ", heigth=" + heigth +
+                ", weight=" + weight +
+                '}';
     }
 }

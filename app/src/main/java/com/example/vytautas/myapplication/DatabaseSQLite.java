@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Vytautas on 2/9/2018.
@@ -30,8 +31,8 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
     private static final String TABLE_POKEMONS = "pokemons";
     private static final String POKEMON_ID = "pokemon_id";
     private static final String POKEMON_NAME = "pokemon_name";
-    private static final String POKEMON_HEIGTH = "pokemon_heigth";
-    private static final String POKEMON_WEIGTH = "pokemon_weigth";
+    private static final String POKEMON_HEIGHT = "pokemon_heighT";
+    private static final String POKEMON_WEIGHT = "pokemon_weigHT";
     private static final String POKEMON_CP = "pokemon_cp";
     private static final String POKEMON_ABILITIES = "pokemon_abilities";
     private static final String POKEMON_TYPE = "pokemon_type";
@@ -40,8 +41,8 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
             + TABLE_POKEMONS + "("
             + POKEMON_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + POKEMON_NAME + " TEXT, "
-            + POKEMON_HEIGTH + " REAL,"
-            + POKEMON_WEIGTH + " REAL, "
+            + POKEMON_HEIGHT + " REAL,"
+            + POKEMON_WEIGHT + " REAL, "
             + POKEMON_CP + " TEXT, "
             + POKEMON_ABILITIES + " TEXT, "
             + POKEMON_TYPE + " TEXT " + ");";
@@ -81,11 +82,11 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
 
         values.put(POKEMON_NAME, pokemon.getName());
-        values.put(POKEMON_HEIGTH, pokemon.getHeigth());
-        values.put(POKEMON_WEIGTH, pokemon.getWeigth());
         values.put(POKEMON_CP, pokemon.getCp());
         values.put(POKEMON_ABILITIES, pokemon.getAbilities());
         values.put(POKEMON_TYPE, pokemon.getType());
+        values.put(POKEMON_HEIGHT, pokemon.getHeight());
+        values.put(POKEMON_WEIGHT, pokemon.getWeight());
 
         // Inserting Row
         db.insert(TABLE_POKEMONS, null, values);
@@ -93,26 +94,66 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
         db.close();
     }
 
-    public String getAllPokemons() {
-        String selectQuery = "SELECT * FROM " + TABLE_POKEMONS;
+    public List<Pokemon> getAllPokemons() {
+        List<Pokemon> pokemonai = new ArrayList<Pokemon>();
+
+        // Select All Query
+        String selectQuery = "SELECT  * FROM " + TABLE_POKEMONS;
+
         SQLiteDatabase db = this.getWritableDatabase();
 
         Cursor cursor = db.rawQuery(selectQuery, null);
-        StringBuffer stringBuffer = new StringBuffer();
-        if (cursor.getCount() != 0) {
-            while (cursor.moveToNext()) {
-                stringBuffer.append(cursor.getInt(0) + "\n");
-                stringBuffer.append(cursor.getString(1) + "\n");
-                stringBuffer.append(cursor.getDouble(2) + "\n");
-                stringBuffer.append(cursor.getDouble(3) + "\n");
-                stringBuffer.append(cursor.getString(4) + "\n");
-                stringBuffer.append(cursor.getString(5) + "\n");
-                stringBuffer.append(cursor.getString(6) + "\n" + "\n");
-            }
-            return stringBuffer.toString();
-        } else {
-            return "shit";
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Pokemon pokemon = new Pokemon();
+
+                pokemon.setId(Integer.parseInt(cursor.getString(0)));
+                pokemon.setName(cursor.getString(1));
+                pokemon.setCp(cursor.getString(2));
+                pokemon.setAbilities(cursor.getString(3));
+                pokemon.setType(cursor.getString(4));
+                pokemon.setWeight(cursor.getDouble(5));
+                pokemon.setHeight(cursor.getDouble(6));
+
+                // adding user to list
+                pokemonai.add(pokemon);
+            } while (cursor.moveToNext());
         }
+
+        // return pokemonaiSQLite list
+        return pokemonai;
+    }
+
+    public Pokemon getPokemon(int id) {
+        Pokemon pokemon = new Pokemon();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_POKEMONS + " WHERE id = '" + id + "'", null);
+
+        pokemon.setId(Integer.parseInt(cursor.getString(0)));
+        pokemon.setName(cursor.getString(1));
+        pokemon.setCp(cursor.getString(2));
+        pokemon.setAbilities(cursor.getString(3));
+        pokemon.setType(cursor.getString(4));
+        pokemon.setWeight(cursor.getDouble(5));
+        pokemon.setHeight(cursor.getDouble(6));
+
+        return pokemon;
+    }
+
+    public void updatePokemon(Pokemon pokemon) {
+        ContentValues cv = new ContentValues();
+        cv.put(POKEMON_NAME, pokemon.getName());
+        cv.put(POKEMON_CP, pokemon.getCp());
+        cv.put(POKEMON_ABILITIES, pokemon.getAbilities());
+        cv.put(POKEMON_TYPE, pokemon.getType());
+        cv.put(POKEMON_WEIGHT, pokemon.getWeight());
+        cv.put(POKEMON_HEIGHT, pokemon.getHeight());
+
+        getReadableDatabase().update(TABLE_POKEMONS, cv, " id = " + pokemon.getId(), null);
     }
 
     //useriui
