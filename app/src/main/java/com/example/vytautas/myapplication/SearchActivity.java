@@ -126,7 +126,8 @@ public class SearchActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(String... params) {
             // jeigu negaila db resursų, galima kiekvieną kartą call'inti pagal įvestus kriterijus paieškos
-            //pokemonaiSQLite = db.getPokemonByName(searchQuery);
+
+            pokemonsSQLite = databaseSQLite.getPokemonByName(searchQuery);
 
             if (!pokemonaiPaieskai.isEmpty()) {
                 pokemonaiPaieskai.clear();

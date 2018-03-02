@@ -128,20 +128,23 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
 
     public Pokemon getPokemon(int id) {
         Pokemon pokemon = new Pokemon();
-
+        List<Pokemon> pokemons = new ArrayList<Pokemon>();
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_POKEMONS + " WHERE id = '" + id + "'", null);
-
-        pokemon.setId(Integer.parseInt(cursor.getString(0)));
-        pokemon.setName(cursor.getString(1));
-        pokemon.setCp(cursor.getString(2));
-        pokemon.setAbilities(cursor.getString(3));
-        pokemon.setType(cursor.getString(4));
-        pokemon.setWeight(cursor.getDouble(5));
-        pokemon.setHeight(cursor.getDouble(6));
-
-        return pokemon;
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_POKEMONS + " WHERE " + POKEMON_ID + " = '" + id + "'", null);
+        if (cursor.moveToFirst()) {
+            do {
+                pokemon.setId(Integer.parseInt(cursor.getString(0)));
+                pokemon.setName(cursor.getString(1));
+                pokemon.setCp(cursor.getString(2));
+                pokemon.setAbilities(cursor.getString(3));
+                pokemon.setType(cursor.getString(4));
+                pokemon.setWeight(cursor.getDouble(5));
+                pokemon.setHeight(cursor.getDouble(6));
+                pokemons.add(pokemon);
+            } while (cursor.moveToNext());
+        }
+        return pokemons.get(0);
     }
 
     public void updatePokemon(Pokemon pokemon) {
@@ -153,7 +156,37 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
         cv.put(POKEMON_WEIGHT, pokemon.getWeight());
         cv.put(POKEMON_HEIGHT, pokemon.getHeight());
 
-        getReadableDatabase().update(TABLE_POKEMONS, cv, " id = " + pokemon.getId(), null);
+        getReadableDatabase().update(TABLE_POKEMONS, cv, POKEMON_ID + " = " + pokemon.getId(), null);
+    }
+
+    public List<Pokemon> getPokemonByName(String name) {
+        List<Pokemon> pokemons = new ArrayList<Pokemon>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_POKEMONS + " WHERE name LIKE '%" + name + "%'", null);
+
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                Pokemon pokemon = new Pokemon();
+
+                pokemon.setId(Integer.parseInt(cursor.getString(0)));
+                pokemon.setName(cursor.getString(1));
+                pokemon.setCp(cursor.getString(2));
+                pokemon.setAbilities(cursor.getString(3));
+                pokemon.setType(cursor.getString(4));
+                pokemon.setWeight(cursor.getDouble(5));
+                pokemon.setHeight(cursor.getDouble(6));
+
+                // adding user to list
+                pokemons.add(pokemon);
+            } while (cursor.moveToNext());
+        }
+
+        // return pokemonaiSQLite list
+        return pokemons;
+
     }
 
     //useriui
