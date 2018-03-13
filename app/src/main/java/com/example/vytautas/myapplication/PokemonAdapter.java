@@ -75,7 +75,6 @@ public class PokemonAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
             int itemPosition = getAdapterPosition();
             int pokemonaiID = pokemons.get(itemPosition).getId();
 
-            // TODO: siųsti pasirinkto pokemono objektą vietoj id
             Pokemon pokemon = pokemons.get(itemPosition);
 
             Intent intent = new Intent(context, RegisterNewEntry.class);

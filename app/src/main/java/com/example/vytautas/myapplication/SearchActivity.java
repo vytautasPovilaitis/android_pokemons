@@ -21,6 +21,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycle_view);
+
         databaseSQLite = new DatabaseSQLite(SearchActivity.this);
 
         // Taupydami duomenų bazės resursus, darome 1 call'ą (getAllPokemonai) užkrovus paieškos langą,
@@ -144,7 +146,6 @@ public class SearchActivity extends AppCompatActivity {
             } else {
                 return "rows";
             }
-
         }
 
         @Override

@@ -31,8 +31,8 @@ public class DatabaseSQLite extends SQLiteOpenHelper {
     private static final String TABLE_POKEMONS = "pokemons";
     private static final String POKEMON_ID = "pokemon_id";
     private static final String POKEMON_NAME = "pokemon_name";
-    private static final String POKEMON_HEIGHT = "pokemon_heighT";
-    private static final String POKEMON_WEIGHT = "pokemon_weigHT";
+    private static final String POKEMON_HEIGHT = "pokemon_height";
+    private static final String POKEMON_WEIGHT = "pokemon_weight";
     private static final String POKEMON_CP = "pokemon_cp";
     private static final String POKEMON_ABILITIES = "pokemon_abilities";
     private static final String POKEMON_TYPE = "pokemon_type";

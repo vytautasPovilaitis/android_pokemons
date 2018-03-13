@@ -1,7 +1,9 @@
 package com.example.vytautas.myapplication;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -29,6 +31,7 @@ public class RegisterNewEntry extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_register_new_entry);
 
         databaseSQLite = new DatabaseSQLite(getApplicationContext());
@@ -158,7 +161,6 @@ public class RegisterNewEntry extends AppCompatActivity {
         pokemon.setAbilities(strCp.toString());
     }
 
-
     private void fillFields(Pokemon pokemon) {
         etPokemonName.setText(pokemon.getName());
         etPokemonHeight.setText(String.valueOf(pokemon.getHeight()));
@@ -174,6 +176,38 @@ public class RegisterNewEntry extends AppCompatActivity {
 
         registerNewActivitySpinner.setSelection(adapter.getPosition(pokemon.getType()));
     }
+
+    @Override
+    public void onBackPressed() {
+        showDialog();
+        //Toast.makeText(this, "dasdsads", Toast.LENGTH_SHORT).show();
+
+    }
+
+    public void showDialog() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setMessage("Exit and discard changes?");
+        AlertDialog alertDialog = null;
+        alertDialogBuilder.setCancelable(false);
+
+        alertDialogBuilder.setPositiveButton("yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface arg0, int arg1) {
+                Intent goToSearchActivity = new Intent(RegisterNewEntry.this, SearchActivity.class);
+                startActivity(goToSearchActivity);
+                finish();
+            }
+        });
+        alertDialogBuilder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        alertDialog = alertDialogBuilder.create();
+        alertDialog.show();
+    }
+
 }
 
 
